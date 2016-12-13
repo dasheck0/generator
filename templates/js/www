@@ -8,12 +8,17 @@ var app = require('../app');
 var debug = require('debug')('{name}:server');
 var http = require('http');
 
+let config = require('../config/config.json')[process.env.NODE_ENV];
+let winston = require('winston');
+
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3000');
+var port = normalizePort(process.env.PORT || config.port);
 app.set('port', port);
+
+winston.info(`Starting service on port [${port}] and environment [${process.env.NODE_ENV}]`);
 
 /**
  * Create HTTP server.

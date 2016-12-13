@@ -1,9 +1,6 @@
-var express = require('express');
-var router = express.Router();
+module.exports = app => {
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+  const info = require('./api/v1/info');
 
-module.exports = router;
+  app.use('/api/v1', info);
+};
