@@ -8,11 +8,24 @@
 [![Windows Build][appveyor-image]][appveyor-url]
 [![Gratipay][gratipay-image]][gratipay-url]
 
+## Introduction
+
+This is a custom express generator CLI. It is adapted to generate projects in the way I usually do. I found myself always adding the same files and making the same changes over and over. Hence I
+created this to make starting new express projects less troublesome. Please note that project created may not suite your style. If so than this generator is obviously not for you. If so please feel free to 
+use it and customize it in any way you want.
+
+%TODO% Describe what files are added additionally and what files are changed.
+
 ## Installation
 
 ```sh
 $ npm install -g express-generator
 ```
+
+From local module
+
+```sh
+$ npm install -g %PATH%/express-generator
 
 ## Quick Start
 
