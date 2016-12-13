@@ -135,7 +135,7 @@ function createApplication(app_name, path) {
     var app = loadTemplate('js/app.js');
     var www = loadTemplate('js/www');
     var index = loadTemplate('js/routes/index.js');
-    var users = loadTemplate('js/routes/users.js');
+    var config = loadTemplate('json/config.json');
 
     // CSS
     var css = loadTemplate('css/style.css');
@@ -166,6 +166,10 @@ function createApplication(app_name, path) {
                     write(path + '/public/stylesheets/style.css', css);
             }
             complete();
+        });
+
+        mkdir(path + '/config', function () {
+            write(path + '/config/config.json', config);
         });
 
         mkdir(path + '/routes', function () {
