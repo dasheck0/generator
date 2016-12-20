@@ -137,6 +137,7 @@ function createApplication(app_name, path) {
     var index = loadTemplate('js/routes/index.js');
     var info = loadTemplate('js/routes/info.js');
     var config = loadTemplate('json/config.json');
+    var pm2 = loadTemplate('json/pm2.json');
 
     // CSS
     var css = loadTemplate('css/style.css');
@@ -171,6 +172,8 @@ function createApplication(app_name, path) {
 
         mkdir(path + '/config', function () {
             write(path + '/config/config.json', config);
+            write(path + '/config/pm2.json', pm2.replace('{name}', app_name));
+            complete();
         });
 
         mkdir(path + '/routes', function () {
@@ -254,6 +257,7 @@ function createApplication(app_name, path) {
                 'cookie-parser': '~1.4.3',
                 'debug': '~2.2.0',
                 'morgan': '~1.7.0',
+                'pm2': '^2.2.2',
                 'serve-favicon': '~2.3.0',
                 'winston': '^2.3.0'
             }
