@@ -1,7 +1,7 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const info = require('../../../package.json');
 
-let info = require('../../../package.json');
+const router = express.Router();
 
 router.get('/', (req, res) => {
     res.json({

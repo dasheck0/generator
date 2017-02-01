@@ -1,6 +1,5 @@
-module.exports = app => {
+const info = require('./api/v1/info');
 
-  const info = require('./api/v1/info');
-
+module.exports = (app) => {
   app.use('/api/v1', info);
 };
